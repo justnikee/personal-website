@@ -40,10 +40,10 @@ const Header = (props: Props) => {
        <ul className='fixed top-0 left-1/2 translate-x-[-50%] w-full max-w-5xl border border-slate-100 border-1 flex m-auto overflow-hidden justify-between mt-3 h-14 rounded-full bg-[#000]'>
        {navdate.map((item) => (
               <li key={item.id}
-              className='flex items-center gap-1 border-r w-full duration-500 transition ease-in-out delay-150 justify-center h-full text-[#e3f7f7] hover:bg-[#e3f7f7] hover:text-black'
+              className='nav-links'
               >
                     <Image width={15} height={15} alt={item.text} src={item.icon} />
-                    <span className='capitalize  '>{item.text}</span>
+                    <span className={`capitalize link-${item.id}`} >{item.text}</span>
               </li>
        ))}
        </ul>

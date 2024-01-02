@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .nav-links {
+    @apply flex items-center gap-1 border-r w-full duration-500 transition ease-in-out justify-center h-full text-[#e3f7f7] hover:bg-[#e3f7f7] hover:text-black;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,7 +32,6 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    cursor: none;
 }
 
 
