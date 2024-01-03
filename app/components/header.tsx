@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import sun from '../../public/icons8-sun.svg'
 import home from '../../public/icons8-home.svg'
+import Link from 'next/link';
 
 type Props = {}
 
@@ -39,12 +40,15 @@ const Header = (props: Props) => {
     <>
        <ul className='fixed top-0 left-1/2 translate-x-[-50%] w-full max-w-5xl border border-slate-100 border-1 flex m-auto overflow-hidden justify-between mt-3 h-14 rounded-full bg-[#000]'>
        {navdate.map((item) => (
-              <li key={item.id}
+       
+              <Link href="#" key={item.id}
               className='nav-links'
               >
                     <Image width={15} height={15} alt={item.text} src={item.icon} />
                     <span className={`capitalize link-${item.id}`} >{item.text}</span>
-              </li>
+                
+              </Link>
+            
        ))}
        </ul>
     </>

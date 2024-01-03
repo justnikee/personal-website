@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Preloader from "./components/preloader";
 import Projects from "./components/projects";
-
+import Tech from "./components/tech";
 
 
 export default function Home() {
@@ -13,6 +13,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
            <Hero/>
            <About/>
+           <Tech />
            <Projects/>
            <Footer />
            <Cursor/>
