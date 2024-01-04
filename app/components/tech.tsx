@@ -91,8 +91,7 @@ const RepeatingColumn:React.FC<Props> = () => {
     return(
         <>
         <div className='h-full w-full col-span-2 flex items-center px-8 leading-normal justify-start border-r border-b border-[#1F1F1F] border'>
-            <p className='text-4xl capitalize font-extrabold text-left'>Your <span className='uppercase'>{text}</span>,<br/>
-            your way.</p>
+            <p className='text-4xl capitalize font-extrabold text-left'>Technologies I <br/><span className='uppercase'>Use - {text}</span></p>
         </div>
         {
             techSectionData.map((item, index) => (

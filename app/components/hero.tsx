@@ -93,22 +93,17 @@ const Hero = (props: Props) => {
     <>
      <div
         ref={loadingScreen}
-        className="fixed top-0 left-0 bg-black h-full w-full z-[999999] hero_main"
+        className="fixed top-0 left-0 bg-[#e3f7f7] h-screen w-screen z-[999999] hero_main overflow-hidden"
       >
-        <div
-          ref={bar}
-          className="bg-black border-t border-[#e3f7f7] h-[100px] w-0 fixed bottom-0 left-0 ease-in-out"
-          style={{ width: counter + "%" }}
-        ></div>
         <h2
-          className="fixed top-1/2 left-1/2 text-[#e3f7f7] text-6xl translate-x-[-50%] translate-y-[-50%]	"
+          className="fixed bottom-[10%] right-[10%] text-black italic font-extrabold text-[150px]"
           ref={text}
         >
           {counter}%
         </h2>
       </div>
     <section className='border-b border-[#e3f7f7] w-full pt-24 pb-10'>
-        <Image className='absolute right-0 top-0 w-20 rotate-[-45deg]' src={chopper} alt='chopper form OP' />
+        <Image className='max-sm:hidden absolute right-0 top-0 w-20 rotate-[-45deg]' src={chopper} alt='chopper form OP' />
         <div>
             <h2 style={{ fontWeight: fontWeight }} className={`text-[143px] leading-[123px] text-[#e3f7f7] text-center uppercase transition-all duration-100 ease-in-out`}>
                 <span className='block'>Hello I'm Nikhil</span>
