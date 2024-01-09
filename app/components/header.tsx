@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import sun from '../../public/icons8-sun.svg'
 import home from '../../public/icons8-home.svg'
 import Link from 'next/link';
+import { link } from 'fs';
 
 type Props = {}
 
@@ -15,26 +16,31 @@ const navdate = [{
     id: 1,
     text: 'Light Mode',
     icon: sun,
+    link: '/about'
 },
 {
     id: 2,
     text: 'start',
     icon: home,
+    link: '/'
 },
 {
     id: 3,
     text: 'About me',
     icon: home,
+    link: '/about'
 },
 {
     id: 4,
     text: 'Projects',
     icon: home,
+    link: '/about'
 },
 {
     id: 5,
     text: 'Contact',
     icon: home,
+    link: '/about'
 }
 ];
 
@@ -50,7 +56,7 @@ const handleClick = () => {
        <ul className='max-sm:hidden fixed top-0 left-1/2 translate-x-[-50%] w-full max-w-5xl border border-slate-100 border-1 flex m-auto overflow-hidden justify-between mt-3 h-14 rounded-full bg-[#000]'>
        {navdate.map((item) => (
        
-              <Link href="#" key={item.id}
+              <Link href={item.link} key={item.id}
               className='nav-links'
               >
                     <Image width={15} height={15} alt={item.text} src={item.icon} />

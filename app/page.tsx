@@ -11,7 +11,7 @@ import Tech from "./components/tech";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-           <Hero/>
+           <Hero title1="Hello I'm Nikhil" title2="I'm a cook & Cook" title3="things for web"/>
            <About/>
            <Tech />
            <Projects/>

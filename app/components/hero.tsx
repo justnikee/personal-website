@@ -1,114 +1,53 @@
 "use client"
-import React, { useEffect, useState, useRef, useLayoutEffect } from 'react'
-import gsap from 'gsap'
+
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import chopper from '../../public/chopper.png'
 
-type Props = {}
+type Props = {
+  title1: string;
+  title2: string;
+  title3: string;
+}
 
-const Hero = (props: Props) => {
+const Hero = ({title1, title2, title3} :Props) => {
 
-    const [counter, setCounter] = useState(0);
-    const [fontWeight, setFontweight] = useState(300);
+  const [fontWeight, setFontweight] = useState(300);
 
-  const startLoader = () => {
-    if (counter === 100) {
-      return;
+  useEffect(() => {
+
+    const handlemouseMove = (event: any) => {
+      const screenWidth = window.innerWidth;
+      const cursorPosition = event.clientX;
+
+  const middle60Start = 0.2 * screenWidth; 
+  const middle60End = 0.8 * screenWidth;  
+
+  const adjustedCursorPosition = Math.max(Math.min(cursorPosition, middle60End), middle60Start);
+
+  const newFontWeight = Math.round(((adjustedCursorPosition - middle60Start) / (middle60End - middle60Start)) * 600) + 300;
+
+      setFontweight(newFontWeight)
     }
 
-    setCounter((prevCounter) => {
-      const newCounter = prevCounter + Math.floor(Math.random() * 10) + 1;
+    window.addEventListener('mousemove', handlemouseMove);
 
-      if (newCounter > 100) {
-        return 100;
-      }
+    return() => {
+        window.removeEventListener('mousemove', handlemouseMove)
+    }
 
-      return newCounter;
-    });
+},[]);
 
-    let delay = Math.floor(Math.random() * 200) + 50;
-
-    setTimeout(startLoader, delay);
-  };
-
-
-
-    useEffect(() => {
-
-        startLoader();
-
-        const handlemouseMove = (event: any) => {
-          const screenWidth = window.innerWidth;
-          const cursorPosition = event.clientX;
-
-      const middle60Start = 0.2 * screenWidth; 
-      const middle60End = 0.8 * screenWidth;  
-
-      const adjustedCursorPosition = Math.max(Math.min(cursorPosition, middle60End), middle60Start);
-
-      const newFontWeight = Math.round(((adjustedCursorPosition - middle60Start) / (middle60End - middle60Start)) * 600) + 300;
-
-          setFontweight(newFontWeight)
-        }
-
-        window.addEventListener('mousemove', handlemouseMove);
-
-        return() => {
-            window.removeEventListener('mousemove', handlemouseMove)
-        }
- 
-    },[]);
-
-
-
-    const loadingScreen = useRef();
-    const text = useRef();
-    const bar = useRef();
-  
-    useLayoutEffect(() => {
-      gsap.registerPlugin();
-  
-      const timeline = gsap.timeline();
-  
-      timeline.to(text.current, {
-        ease: "power2.inOut",
-      });
-  
-      timeline.to(loadingScreen.current, {
-        height: 0,
-        duration: 1,
-        delay: 3,
-      });
-  
-      timeline.to(
-        [text.current, bar.current],
-        {
-          opacity: 0,
-        },
-        "-=2"
-      );
-    }, []);
-
+    
   return (
     <>
-     <div
-        ref={loadingScreen}
-        className="fixed top-0 left-0 bg-[#e3f7f7] h-screen w-screen z-[999999] hero_main overflow-hidden"
-      >
-        <h2
-          className="fixed bottom-[10%] right-[10%] text-black italic font-extrabold text-[150px]"
-          ref={text}
-        >
-          {counter}%
-        </h2>
-      </div>
-    <section className='border-b border-[#e3f7f7] w-full pt-24 pb-10'>
+    <section className='border-b border-[#e3f7f7] w-full pt-24 pb-10 h-[505px]'>
         <Image className='max-sm:hidden absolute right-0 top-0 w-20 rotate-[-45deg]' src={chopper} alt='chopper form OP' />
         <div>
             <h2 style={{ fontWeight: fontWeight }} className={`text-[143px] leading-[123px] text-[#e3f7f7] text-center uppercase transition-all duration-100 ease-in-out`}>
-                <span className='block'>Hello I'm Nikhil</span>
-                <span className='block'>I'm a cook & Cook</span>
-                <span className='block'>things for web</span>
+                <span className='block'>{title1} </span>
+                <span className='block'>{title2}</span>
+                <span className='block'>{title3}</span>
             </h2>
         </div>
     </section>
