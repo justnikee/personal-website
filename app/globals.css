@@ -56,3 +56,9 @@ p , h1, h2, h3, h4 ,h5 {
   filter: invert(1);
   -webkit-filter: invert(1);
 }
+
+
+@font-face {
+  font-family: saman;
+  src: url('../public/font/SAMAN___.TTF');
+}

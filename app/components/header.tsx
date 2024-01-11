@@ -7,7 +7,6 @@ import { useRef, useState } from 'react';
 import sun from '../../public/icons8-sun.svg'
 import home from '../../public/icons8-home.svg'
 import Link from 'next/link';
-import { link } from 'fs';
 
 type Props = {}
 

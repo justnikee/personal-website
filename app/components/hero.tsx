@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import chopper from '../../public/chopper.png'
+// import newSong from '../../public/audio/audio.mp3'
+import Link from 'next/link'
 
 type Props = {
   title1: string;
@@ -12,8 +12,7 @@ type Props = {
 
 const Hero = ({title1, title2, title3} :Props) => {
 
-  const [fontWeight, setFontweight] = useState(300);
-
+  const [fontWeight, setFontweight] = useState(500);
   useEffect(() => {
 
     const handlemouseMove = (event: any) => {
@@ -41,14 +40,21 @@ const Hero = ({title1, title2, title3} :Props) => {
     
   return (
     <>
-    <section className='border-b border-[#e3f7f7] w-full pt-24 pb-10 h-[505px]'>
-        <Image className='max-sm:hidden absolute right-0 top-0 w-20 rotate-[-45deg]' src={chopper} alt='chopper form OP' />
-        <div>
-            <h2 style={{ fontWeight: fontWeight }} className={`text-[143px] leading-[123px] text-[#e3f7f7] text-center uppercase transition-all duration-100 ease-in-out`}>
-                <span className='block'>{title1} </span>
-                <span className='block'>{title2}</span>
-                <span className='block'>{title3}</span>
+    <section className='border-b w-full pt-24 pb-10 h-screen bg-white flex justify-center'>
+        <div className='max-w-[1440px] w-full px-10 flex flex-col justify-center gap-10 items-center h-full relative'>
+          <Link href="#">
+            <h2 style={{ fontWeight: fontWeight }} className={`text-[143px] leading-[123px] text-black uppercase transition-all duration-100 ease-in-out`}>
+                <span className='inline-block lg:pl-32'>{title1}</span>
+                <span className='inline-block lg:pl-96'>{title2}</span>
+                <span className='inline-block lg:pl-32'>{title3}</span>
             </h2>
+            </Link>
+            <div className='h-24 w-24 rounded-full border-4 border-black'>
+        </div>
+        <div className='fixed left-10 bottom-20 text-black flex gap-2 rotate-[270deg]'>
+          <span>SOUND</span>
+          <span className='pointer'>OFF</span>
+        </div>
         </div>
     </section>
     </>

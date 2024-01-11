@@ -21,7 +21,7 @@ const Cursor = (props: Props) => {
     document.addEventListener('mousemove', onMouseMove);
 
     const onMouseEnterLink = (e: any) => {
-        gsap.to(cursor, { scale: 3 });
+        gsap.to(cursor, { scale: 6 });
     };
 
     const onMouseLeaveLink = () => {
