@@ -3,6 +3,7 @@ import { Red_Hat_Display } from 'next/font/google'
 import './globals.css'
 import Header from './components/header'
 import HeaderNew from './components/new-header'
+import SmoothScroll from './components/SmoothScroll'
 
 const inter = Red_Hat_Display({ subsets: ['latin'] })
 
@@ -20,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className=''>
+        <SmoothScroll>
         <HeaderNew />
         {children}
-        </main>
+        </SmoothScroll>
         </body>
     </html>
   )

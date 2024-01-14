@@ -14,7 +14,7 @@ const Cursor = (props: Props) => {
 
     const onMouseMove = (e: any) => {
       const { clientX, clientY } = e;
-      setCursorPosition({ x: clientX - 2, y: clientY - 2 });
+      setCursorPosition({ x: clientX, y: clientY });
       gsap.to(cursor, { x: cursorPosition.x, y: cursorPosition.y });
     };
 

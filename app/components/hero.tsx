@@ -55,10 +55,41 @@ const Hero = ({title1, title2, title3} :Props) => {
           <span>SOUND</span>
           <span className='pointer'>OFF</span>
         </div>
+        <div className='fixed right-10 bottom-20 rounded-full bg-black  flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
+          <span className='h-[1px] w-full bg-white'></span>
+          <span className='h-[1px] w-full bg-white'></span>
+        </div>
         </div>
     </section>
+    <Menu/>
     </>
   )
+}
+
+
+
+
+const Menu = () => {
+return (
+  <>
+     <div className='h-screen w-screen bg-black'>
+      <div className='px-20 max-w-[1440px] flex flex-col justify-center h-full items-start'> 
+        <Link className='lg:text-9xl uppercase' href="#">
+          <span>Home</span>
+        </Link>
+        <Link className='lg:text-9xl uppercase' href="#">
+          <span>Work</span>
+        </Link>
+        <Link className='lg:text-9xl uppercase' href="#">
+          <span>About</span>
+        </Link>
+        <Link className='lg:text-9xl uppercase' href="#">
+          <span>Contact</span>
+        </Link>
+      </div>
+     </div>
+  </>
+)
 }
 
 export default Hero

@@ -22,9 +22,9 @@ const HeaderNew = (props: Props) => {
       let currentMinute = time < '10' ? `0${time}` : time;
 
   return (
-    <nav className='h-20 flex justify-center bg-white'>
+    <nav className='h-20 flex justify-center bg-transparent fixed top-0 w-full'>
         <div className='max-w-[1440px] px-10 flex justify-between items-center w-full'>
-         <h2 className='font-[saman] text-black text-4xl tracking-wider'>Nikhil</h2>
+         <h2 className=' text-black text-4xl'>Nikhil.</h2>
          <span className='bg-black px-3 py-1 text-white'>{currentTime.getHours()} : {currentMinute} {ampm}</span>
         </div>
     </nav>
