@@ -54,14 +54,24 @@ const handleClick = () => {
     
     gsap.to('.burger', {
         background: open ? '#000' : '#fff',
-        delay: 1,
     });
 
     gsap.to('.sticks', {
-      background: open ? '#000' : '#fff'
+      background: open ? '#fff' : '#000',
     })
-}
 
+    gsap.to('.stick1', {
+      y: open ? 0 : 4.5,
+      rotationZ: open ? 0 : 45, 
+      transformOrigin: '50% 50%',
+    });
+  
+    gsap.to('.stick2', {
+      y: open ? 0 : -4.5,
+      rotationZ: open ? 0 : -45, 
+      transformOrigin: '50% 50%', 
+    });
+  }
     
   return (
     <>
@@ -80,9 +90,9 @@ const handleClick = () => {
           <span>SOUND</span>
           <span className='pointer'>OFF</span>
         </div>
-        <div onClick={handleClick} className='burger z-[51] cursor-pointer fixed right-10 bottom-20 rounded-full bg-black  flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
-          <span className='sticks h-[1px] w-full bg-white'></span>
-          <span className='sticks h-[1px] w-full bg-white'></span>
+        <div onClick={handleClick} className='burger z-[51] cursor-pointer bg-black fixed right-10 bottom-20 rounded-full flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
+          <span className='sticks stick1 h-[1px] w-full bg-white'></span>
+          <span className='sticks stick2 h-[1px] w-full bg-white'></span>
         </div>
         </div>
     </section>
