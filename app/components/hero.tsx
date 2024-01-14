@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-// import newSong from '../../public/audio/audio.mp3'
 import Link from 'next/link'
+import gsap from 'gsap'
 
 type Props = {
   title1: string;
@@ -37,6 +37,31 @@ const Hero = ({title1, title2, title3} :Props) => {
 
 },[]);
 
+const [open , setOpen] = useState(false);
+const handleClick = () => {
+  setOpen(!open);
+
+    gsap.to('.slider', {
+      height: open ? '0%' : '100%',
+      delay: 1,
+      duration: 1,
+    })
+
+    gsap.to('.menu-wrapper', {
+      opacity: open ? 0 : 1,
+      duration: 0.1
+    })
+    
+    gsap.to('.burger', {
+        background: open ? '#000' : '#fff',
+        delay: 1,
+    });
+
+    gsap.to('.sticks', {
+      background: open ? '#000' : '#fff'
+    })
+}
+
     
   return (
     <>
@@ -55,13 +80,13 @@ const Hero = ({title1, title2, title3} :Props) => {
           <span>SOUND</span>
           <span className='pointer'>OFF</span>
         </div>
-        <div className='fixed right-10 bottom-20 rounded-full bg-black  flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
-          <span className='h-[1px] w-full bg-white'></span>
-          <span className='h-[1px] w-full bg-white'></span>
+        <div onClick={handleClick} className='burger z-[51] cursor-pointer fixed right-10 bottom-20 rounded-full bg-black  flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
+          <span className='sticks h-[1px] w-full bg-white'></span>
+          <span className='sticks h-[1px] w-full bg-white'></span>
         </div>
         </div>
     </section>
-    <Menu/>
+    <Menu open={open}/>
     </>
   )
 }
@@ -69,22 +94,43 @@ const Hero = ({title1, title2, title3} :Props) => {
 
 
 
-const Menu = () => {
+const Menu = ({open}: {open: boolean}) => {
+
+  const handleMouseEnter = (id: string) => {
+    gsap.to(`.mouseoverText-${id}`, {
+    y: -150,
+    duration: 0.5,
+    ease: 'power1.inOut'
+    })
+  }
+
+  const hanldeMouseLeave = (id: string) => {
+    gsap.to(`.mouseoverText-${id}`, {
+      y: 0,
+      duration: 0.5,
+      ease: 'power1.inOut'
+      })
+  }
+
 return (
   <>
-     <div className='h-screen w-screen bg-black'>
-      <div className='px-20 max-w-[1440px] flex flex-col justify-center h-full items-start'> 
-        <Link className='lg:text-9xl uppercase' href="#">
-          <span>Home</span>
+     <div className={`slider w-screen bg-black absolute top-0 h-0 z-50 ${open ? 'opne' : ''}`}>
+      <div className='menu-wrapper px-20 max-w-[1440px] flex flex-col justify-center h-full items-start'> 
+        <Link onMouseEnter={() => handleMouseEnter('home')} onMouseLeave={() => hanldeMouseLeave('home')} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
+          <span className='mouseoverText-home'>Home</span>
+          <span className='mouseoverText-home'>Home</span>
         </Link>
-        <Link className='lg:text-9xl uppercase' href="#">
-          <span>Work</span>
+        <Link onMouseEnter={() => handleMouseEnter('work')} onMouseLeave={() => hanldeMouseLeave('work')} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
+        <span className='mouseoverText-work'>Work</span>
+          <span className='mouseoverText-work'>Work</span>
         </Link>
-        <Link className='lg:text-9xl uppercase' href="#">
-          <span>About</span>
+        <Link onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={() => hanldeMouseLeave('about')} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
+        <span className='mouseoverText-about'>About</span>
+          <span className='mouseoverText-about'>About</span>
         </Link>
-        <Link className='lg:text-9xl uppercase' href="#">
-          <span>Contact</span>
+        <Link onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={() => hanldeMouseLeave('contact')} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
+        <span className='mouseoverText-contact'>Contact</span>
+          <span className='mouseoverText-contact'>Contact</span>
         </Link>
       </div>
      </div>
