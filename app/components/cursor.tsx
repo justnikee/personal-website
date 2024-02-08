@@ -10,7 +10,7 @@ const Cursor = (props: Props) => {
 
   useEffect(() => {
     let cursor = document.querySelector('.custom-cursor');
-    let links = document.querySelectorAll('a');
+    let links = document.querySelectorAll('.big-cursor');
 
     const onMouseMove = (e: any) => {
       const { clientX, clientY } = e;

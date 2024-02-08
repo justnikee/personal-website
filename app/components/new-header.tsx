@@ -1,13 +1,33 @@
 "use client"
 
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 type Props = {}
 
 const HeaderNew = (props: Props) => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
+
+    const topText = useRef();
+    const bottomText = useRef();
+
+    function hanldeMouseEnter() {
+      gsap.to([topText.current, bottomText.current],{
+            y: -20,
+            ease: 'power1.inOut',
+            duration: 0.5
+      })
+    }
+
+    function handleMouseLeave() {
+      gsap.to([topText.current, bottomText.current],{
+        y: 0
+  })
+    }
+
+
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -24,8 +44,12 @@ const HeaderNew = (props: Props) => {
   return (
     <nav className='h-20 flex justify-center bg-transparent fixed top-0 w-full'>
         <div className='max-w-[1440px] px-10 flex justify-between items-center w-full'>
-         <h2 className=' text-black text-4xl'>Nikhil.</h2>
-         <span className='bg-black px-3 py-1 text-white'>{currentTime.getHours()} : {currentMinute} {ampm}</span>
+         <h2 className='big-cursor text-slate-200 text-4xl'>Nikhil.</h2>
+         <div onMouseEnter={hanldeMouseEnter} onMouseLeave={handleMouseLeave} className='h-5 overflow-hidden text-slate-200'>
+          <p ref={topText} className='text-sm h-5 uppercase '>Available For Full Time</p>
+          <p ref={bottomText} className='text-sm h-5 uppercase '>Available For Full Time</p>
+         </div>
+         <span className='bg-slate-200 px-3 py-1 text-black'>{currentTime.getHours()} : {currentMinute} {ampm}</span>
         </div>
     </nav>
   )

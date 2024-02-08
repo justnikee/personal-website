@@ -2,10 +2,11 @@
 
 import React, { useState, useRef, RefObject, ReactHTML } from 'react'
 
-import reactImg from '../../public/stack images/react-javascript-js-framework-facebook-svgrepo-com.svg'
+import reactImg from '../svgs/react.svg'
 import htmlImg from '../../public/stack images/html-124-svgrepo-com.svg'
 import cssImg from '../../public/stack images/css3-svgrepo-com.svg'
 import tailImg from '../../public/stack images/tailwind-svgrepo-com.svg'
+import nextimg from '../svgs/next.svg'
 import nodeImg from '../../public/stack images/node-svgrepo-com.svg'
 import jsImg from '../../public/stack images/js01-svgrepo-com.svg'
 import Image from 'next/image'
@@ -41,7 +42,7 @@ const techSectionData = [
     {
         id: 5,
         text: 'NEXT',
-        icon: tailImg
+        icon: nextimg
     },
     {
         id: 6,
@@ -63,11 +64,10 @@ const techSectionData = [
 const Tech = (props: Props) => {
 
   return (
-    <div className='border-[1px] border-[#1F1F1F] rounded-2xl h-[400px] max-w-[1240px] w-full m-auto mb-24'>
-    <div className='grid grid-cols-6 h-full w-full '>
+    <div className='rounded-2xl max-w-[1240px] w-full m-auto mb-24'>
+    <div className='flex flex-row-reverse'>
         <RepeatingColumn />
     </div>
-        
     </div>
   )
 }
@@ -90,12 +90,14 @@ const RepeatingColumn:React.FC<Props> = () => {
 
     return(
         <>
-        <div className='h-full w-full col-span-2 flex items-center px-8 leading-normal justify-start border-r border-b border-[#1F1F1F] border'>
-            <p className='text-4xl capitalize font-extrabold text-left'>Technologies I <br/><span className='uppercase'>Use - {text}</span></p>
+        <div className='h-full w-[40%] col-span-2 flex items-center p-10 justify-start border-r  border-b leading-8 border-[#1F1F1F] border-t'>
+            <p className='text-4xl capitalize text-left font-bold leading-[44px]'>I can cook with popular & modern frameworks / languages <br/><span className='italic uppercase'>{text}</span></p>
         </div>
+        <div className='grid relative grid-cols-3 w-[60%] place-items-center border-[1.5px] border-[#1f1f1f] p-20'>
+            <div className='shine absolute top-0 w-full'></div>
         {
             techSectionData.map((item, index) => (
-                <div className='h-full w-full border-r border-b border-[#1F1F1F] border'  key={item.id}>
+                <div className='h-40 w-66' key={item.id}>
                    <span ref={hoverItemRef[index]} onMouseLeave={handleMouseLeave} onMouseEnter={() => handleMouseOver(index)} className='
                     h-full w-full flex items-center justify-center
                    '>
@@ -106,6 +108,7 @@ const RepeatingColumn:React.FC<Props> = () => {
                   
             ))
         }
+        </div>
         </>
     )
 }
