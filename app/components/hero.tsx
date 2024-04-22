@@ -96,7 +96,7 @@ gsap.to('.stick2', {
       start: 'top 0', // Start immediately when hero comes into view
       end: '+=300',
       scrub: true,
-      markers: true,
+      // markers: true,
     });
     
     // Animation for second icon
@@ -114,7 +114,7 @@ gsap.to('.stick2', {
       start: 'top 0', // Start when hero is 20% into view
       end: '+=300',
       scrub: true,
-      markers: true,
+      // markers: true,
     });
     
     // Animation for third icon
@@ -132,7 +132,7 @@ gsap.to('.stick2', {
       start: 'top 0', // Start when hero is 40% into view
       end: '+=300',
       scrub: true,
-      markers: true,
+      // markers: true,
     });
     
 
