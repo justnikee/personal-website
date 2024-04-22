@@ -8,7 +8,7 @@
   }
 }
 
- :root {
+ /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,6 +30,10 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+body{
+  background-color: #564CF8;
 }
 
 
@@ -63,8 +67,19 @@ p , h1, h2, h3, h4 ,h5 {
   src: url('../public/font/SAMAN___.TTF');
 }
 
+@font-face {
+  font-family: damn;
+  src: url('../public/font/damn.woff2');
+}
+
 .shine{
   width: 100%;
     background-image: radial-gradient(500px 200px at 50%0,#131f33 20%,rgba(19,30,49,0) 100%);
     height: 100%;
+}
+
+/*********** stagger text *****************/
+
+.stager-text2{
+  transform: skewY(-2deg) scale(.98);
 }

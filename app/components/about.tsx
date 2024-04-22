@@ -5,6 +5,8 @@ import img from '../../public/stack images/img.png'
 import Image from 'next/image'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import gsap from 'gsap'
+import bgImage from '../../public/svg-image-19.svg'
+import { useGSAP } from '@gsap/react'
 type Props = {}
 
 const About = (props: Props) => {
@@ -14,6 +16,21 @@ const About = (props: Props) => {
 
   useLayoutEffect(() => {
 
+const blobAnime = gsap.timeline();
+blobAnime.to('.blob', {
+  scaleX: '1.3', 
+  ease: 'power1.inOut',
+  duration: 3,
+})
+
+ScrollTrigger.create({
+  animation: blobAnime,
+  trigger: ".main-stager",
+  start: "top 70%",
+  end: "+=300",
+  scrub: true,
+  // markers: true
+  })
 
 const tl =gsap.timeline()
 tl.to(".stager-text span", {color: '#fff', stagger: 0.1, ease: 'power1.inOut'},1)
@@ -26,39 +43,41 @@ ScrollTrigger.create({
   scrub: 0.1
 })
 
-const tlImg = gsap.timeline();
-
-tlImg.to(".about-image", { rotation: 360, stagger: 0.1 })
-
-ScrollTrigger.create({
-animation: tlImg,
-trigger: ".main-stager",
-start: "top 20%",
-end: "+=300",
-scrub: true
-})
 
 },[]);
 
-  
+
   return (
-    <div className='h-[600px] max-w-3xl m-auto flex flex-col justify-center gap-6 main-stager'>
-        <h2 className='stager-text text-black'>
-        <span>Good</span>
-        <span> design</span>
-        <span> creates</span>
-        <span> meaningful</span>
-        <span> and</span>
-        <span> memorable</span>
-        <Image className='about-image inline-block h-10 w-10' src={img} alt='ninja'/>
-        <span> connections</span>
-        </h2>
-        <div className='flex gap-4'>
-           <p className='flex-1'>Create digital solutions that are not only functional and aesthetically pleasing, but also deeply impactful, memorable and meaningful to improve people's lives. <br/><br/>
-           These solutions represent a constant commitment to excellence and innovation, 
-           to offer experiences that last in the collective memory.    </p>
+        <div className='relative w-full overflow-hidden pt-[20vw] mt-24 '>
+        <div className='absolute z-0 top-0 left-0 w-[120%] h-full'>
+        <Image className='blob w-[100vw] ' src={bgImage} alt='shape' />
         </div>
-    </div>
+        <div className='w-[900px] mb-[31rem] m-auto main-stager relative'>
+        <h2 className='stager-text1 text-[#f982fb] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        WE CREATE THE WEBSITE <br/>
+        THAT SUITS YOU
+        </h2>
+        <h2 className='stager-text2 text-[#f4f4f4] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        WE CREATE THE WEBSITE <br/>
+        THAT SUITS YOU
+        </h2>
+        </div>
+        <div className='bg-black w-full'>
+        <div className='grid-section mx-10 px-7 py-10 bg-[#1C1C1C] grid grid-cols-2 gap-7 h-[600px] rounded-3xl'>
+          <div className='grid grid-cols-2 gap-7'>
+            <div className='rounded-3xl bg-slate-400'></div>
+            <div className='rounded-3xl bg-slate-400'> </div>
+            <div className='rounded-3xl bg-slate-400'></div>
+            <div className='rounded-3xl bg-slate-400'></div>
+          </div>
+          <div className='rounded-3xl bg-white'>
+             
+          </div>
+
+        </div>
+        </div>
+       
+        </div>
   )
 }
 

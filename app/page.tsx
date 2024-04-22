@@ -8,6 +8,7 @@ import Preloader from "./components/preloader";
 import Projects from "./components/projects";
 import Tech from "./components/tech";
 import Newfooter from "./components/new-footer";
+import GridSection from "./components/grid-section";
 
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
       <NewPreloader/>
            <Hero title1="I'm Nikhil" title2="I Cook" title3="things for web"/>
            <About/>
-           <Tech />
-           <Projects/>
+           {/* <GridSection/> */}
+           {/* <Tech />
+           <Projects/> */}
            <Newfooter />
            <Cursor/>
     </main>
