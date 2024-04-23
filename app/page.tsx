@@ -9,6 +9,7 @@ import Projects from "./components/projects";
 import Tech from "./components/tech";
 import Newfooter from "./components/new-footer";
 import GridSection from "./components/grid-section";
+import Slider from "./components/slider"
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
            {/* <GridSection/> */}
            {/* <Tech />
            <Projects/> */}
+           <Slider/>
            <Newfooter />
            <Cursor/>
     </main>

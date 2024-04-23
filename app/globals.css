@@ -83,3 +83,44 @@ p , h1, h2, h3, h4 ,h5 {
 .stager-text2{
   transform: skewY(-2deg) scale(.98);
 }
+
+.grid-section{
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 35px;
+grid-row-gap: 35px;
+}
+
+
+.grid1 { grid-area: 1 / 1 / 2 / 2; }
+.grid2 { grid-area: 1 / 2 / 2 / 3; }
+.grid3 { grid-area: 2 / 1 / 3 / 3; }
+.div4 { grid-area: 3 / 1 / 4 / 2; }
+.div5 { grid-area: 3 / 2 / 4 / 3; }
+
+
+.slider-track {
+  animation: moveSlideshow 35s linear infinite;
+  -webkit-animation: moveSlideshow 35s linear infinite;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  flex: none;
+  align-items: center;
+  margin-right: 25px;
+  display: flex;
+}
+
+.items-holder {
+  animation: moveSlideshow 35s linear infinite;
+}
+
+.items-holder:hover {
+    animation-play-state: paused;
+  }
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-50%);  
+  }
+}
