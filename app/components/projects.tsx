@@ -1,39 +1,50 @@
-import Image from "next/image"
-import Link from "next/link"
-
-import image from '../../public/project image.avif'
+import React from 'react'
+import Image from 'next/image'
+import nikee from '../../public/nike.png'
 
 type Props = {}
 
 const Projects = (props: Props) => {
   return (
-    <div>
-    <ImageWithText position='flex-row' />
-    <ImageWithText position='flex-row-reverse' />
-    <ImageWithText position='flex-row' />
-    <ImageWithText position='flex-row-reverse' />
+    <div className='bg-black pb-20'>
+    <div className='bg-pink-300 m-auto rounded-xl max-w-[95%] pt-24 px-12 py-12'>
+      <div className='relative h-24'>
+      <h2 className='stager-text1 text-[#564cf8] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        SOME PROJECTS
+      </h2>
+      <h2 className='stager-text2 text-[#f4f4f4] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        SOME PROJECTS
+      </h2>
+      </div>
+      <div className='grid grid-cols-2 gap-8 pt-24'>
+        <div>
+          <div className='rounded-xl p-4 bg-[#fefefe]'>
+            <Image alt='nike' src={nikee}/>
+          </div>
+          <div className='flex flex-row gap-3 mt-5'>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Web Development</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Frontend</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Web Design</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>E-Commerce</span>
+          </div>
+          <h3 className='text-black font-["damn"] text-[40px] leading-10 pt-4'>Nike Clone</h3>
+        </div>
+        <div>
+          <div className='rounded-xl p-4 bg-[#fefefe]'>
+            <Image alt='nike' src={nikee}/>
+          </div>
+          <div className='flex flex-row gap-3 mt-5'>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Web Development</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Frontend</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>Web Design</span>
+            <span className='text-sm uppercase text-white bg-[#564cf8] border-1 border-white rounded-xl px-2 py-1'>E-Commerce</span>
+          </div>
+          <h3 className='text-black font-["damn"] text-[40px] leading-10 pt-4'>Nike Clone</h3>
+        </div>
+      </div>
+    </div>
     </div>
   )
 }
 
 export default Projects
-
-
-
-const ImageWithText = (props: any) => {
-    return (
-    <div className={`flex px-10 gap-6 max-w-[1240px] mt-12 mb-12 ${props.position}`}>
-       <div className="w-[35%]  gap-4">
-        <span className="block text-sm mb-2">Web Application</span>
-        <h3 className="text-4xl mb-4 font-bold">
-          Ecommerse frontend
-        </h3>
-        <p className="leading-[24px] mb-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nesciunt officiis doloremque voluptate facilis qui, ipsum quam minima. Facilis recusandae itaque optio vero voluptate nostrum dignissimos porro, ipsum voluptates sunt.</p>
-        <Link className="bg-[#e3f7f7] text-black px-9 py-3 text-sm capitalize border transition-all hover:text-[#e3f7f7] hover:bg-black hover:border-1 hover:border-white rounded-2xl" href="www.github.com/justnikee">View Sorce Code</Link>
-       </div>
-       <div className="w-[65%] rounded-3xl overflow-hidden"> 
-           <Image className="h-full w-full object-cover" alt="project" src={image}></Image>
-       </div>
-    </div>
-    )
-}

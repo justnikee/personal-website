@@ -10,6 +10,7 @@ import Tech from "./components/tech";
 import Newfooter from "./components/new-footer";
 import GridSection from "./components/grid-section";
 import Slider from "./components/slider"
+import Contact from "./components/contact";
 
 
 export default function Home() {
@@ -22,7 +23,9 @@ export default function Home() {
            {/* <Tech />
            <Projects/> */}
            <Slider/>
-           <Newfooter />
+           <Projects/>
+           <Contact/>
+           {/* <Newfooter /> */}
            <Cursor/>
     </main>
   )
