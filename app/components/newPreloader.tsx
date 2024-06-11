@@ -73,7 +73,7 @@ const NewPreloader = (props: Props) => {
 
     return (
         <>
-            <div className="preloader-container h-full w-screen absolute right-0 top-0 left-0 z-[100]">
+            <div className="preloader-container h-full w-screen absolute right-0 top-0 left-0 z-[102]">
                 <div ref={topBlock} className="h-[50vh] w-full bg-[#EF4444]">
                 </div>
                 <div className="loadertextWrapper flex flex-col w-full items-center overflow-hidden h-[100px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-[#BEF941]">
