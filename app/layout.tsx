@@ -7,7 +7,7 @@ import SmoothScroll from './components/SmoothScroll'
 const inter = Red_Hat_Display({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Nikhil - Cook',
+  title: 'Nikhil - Personal Website',
   description: 'Deveoper Portfolio',
 }
 

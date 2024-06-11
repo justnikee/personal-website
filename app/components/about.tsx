@@ -48,7 +48,7 @@ const About = (props: Props) => {
 
 
   return (
-        <div className='circle-rotation relative w-full overflow-hidden'>
+        <div id='about' className='circle-rotation relative w-full overflow-hidden'>
         <Image className='blob object-cover object-top sm:w-[100vw] absolute z-0 top-0 left-0 w-[120%] h-[1000px]' src={bgImage} alt='shape' />
         <div className='h-[80vh] flex items-center justify-center'>
         <div className=' w-full h-[400px] sm:h-[200px] sm:w-[900px] sm:mb-[10rem] m-auto main-stager relative'>

@@ -138,7 +138,7 @@ const Hero = ({title1, title2, title3} :Props) => {
     
   return (
     <>
-    <section className={`hero w-full pb-10 h-screen sm:flex items-center justify-center ${open ? 'overflow-hidden': ''}`}>
+    <section className={`hero w-full pb-10 sm:mt-12 h-screen sm:flex items-center justify-center ${open ? 'overflow-hidden': ''}`}>
         <div className='max-w-[1440px] w-full px-4 sm:px-10 flex flex-col justify-center gap-10 items-center h-full relative'>
             <div /* style={{ fontWeight: fontWeight }} */ className={`flex flex-col sm:gap-7 text-[80px] w-full text-center leading-[82px] md:text-[110px] md:leading-[100px] text-slate-200 uppercase transition-all duration-100 ease-in-out`}>
               <div className='relative h-32'>
@@ -173,7 +173,7 @@ const Hero = ({title1, title2, title3} :Props) => {
           <span>SOUND</span>
           <span className='pointer'>OFF</span>
         </div>
-        <div onClick={handleClick} className='big-cursor burger z-[51] cursor-pointer bg-slate-200 fixed right-10 bottom-20 rounded-full flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
+        <div onClick={handleClick} className='big-cursor burger z-[101] cursor-pointer bg-slate-200 fixed right-10 bottom-20 rounded-full flex flex-col justify-center items-center gap-2 p-3 h-10 w-10 '>
           <span className='sticks stick1 h-[1px] w-full bg-black'></span>
           <span className='sticks stick2 h-[1px] w-full bg-black'></span>
         </div>
@@ -204,23 +204,23 @@ const Menu = ({open, handleClick}: {open: boolean, handleClick: () => void}) => 
 
   return (
     <>
-      <div className={`slider w-screen bg-black fixed top-0 left-0 h-0 ${open ? 'sm:pt-24' : ''} overflow-hidden z-50 ${open ? 'opne' : ''}`}>
+      <div className={`slider w-screen bg-black fixed top-0 left-0 h-0 ${open ? 'sm:pt-24' : ''} overflow-hidden z-[100] ${open ? 'opne' : ''}`}>
         <div className='menu-wrapper px-4 sm:px-20 max-w-[1440px] flex flex-col justify-center h-full items-start'> 
-          <Link onMouseEnter={() => handleMouseEnter('home')} onMouseLeave={() => hanldeMouseLeave('home')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
-            <span className='mouseoverText-home stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl'>Home</span>
-            <span className='mouseoverText-home stager-text2 uppercase text-[#f4f4f4] font-["damn"]  hidden sm:block'>Home</span>
-          </Link>
-          <Link onMouseEnter={() => handleMouseEnter('work')} onMouseLeave={() => hanldeMouseLeave('work')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
-            <span className='mouseoverText-work stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl'>Work</span>
-            <span className='mouseoverText-work stager-text2 uppercase text-[#f4f4f4] font-["damn"] hidden sm:block'>Work</span>
-          </Link>
-          <Link onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={() => hanldeMouseLeave('about')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#">
-            <span className='mouseoverText-about stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl'>About</span>
+          <Link onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={() => hanldeMouseLeave('about')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#about">
+            <span className='mouseoverText-about stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl  sm:leading-[9rem]'>About</span>
             <span className='mouseoverText-about stager-text2 uppercase text-[#f4f4f4] font-["damn"] hidden sm:block'>About</span>
           </Link>
-          <Link onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={() => hanldeMouseLeave('contact')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#projects">
-            <span className='mouseoverText-contact stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl'>Contact</span>
+          <Link onMouseEnter={() => handleMouseEnter('work')} onMouseLeave={() => hanldeMouseLeave('work')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#projects">
+            <span className='mouseoverText-work stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl sm:leading-[9rem]'>Work</span>
+            <span className='mouseoverText-work stager-text2 uppercase text-[#f4f4f4] font-["damn"] hidden sm:block'>Work</span>
+          </Link>
+          <Link onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={() => hanldeMouseLeave('contact')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#contact">
+            <span className='mouseoverText-contact stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl sm:leading-[9rem]'>Contact</span>
             <span className='mouseoverText-contact stager-text2 uppercase text-[#f4f4f4] font-["damn"] hidden sm:block'>Contact</span>
+          </Link>
+          <Link onMouseEnter={() => handleMouseEnter('home')} onMouseLeave={() => hanldeMouseLeave('home')} onClick={handleClick} className='lg:text-9xl uppercase h-[140px] overflow-hidden flex flex-col gap-3' href="#socials">
+            <span className='mouseoverText-home stager-text1 uppercase text-[#f84c4c] font-["damn"] text-8xl sm:text-9xl sm:leading-[9rem]'>Socials</span>
+            <span className='mouseoverText-home stager-text2 uppercase text-[#f4f4f4] font-["damn"]  hidden sm:block'>Socials</span>
           </Link>
         </div>
       </div>

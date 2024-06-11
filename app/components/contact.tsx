@@ -4,7 +4,7 @@ type Props = {}
 
 const Contact = (props: Props) => {
   return (
-    <div className='bg-black w-full pb-12'>
+    <div id='contact' className='bg-black w-full pb-12'>
              <div className='bg-[#ef4444] m-auto rounded-xl w-full max-w-[95%] px-12 py-24 flex flex-col items-center'>
                 <div className='relative h-[700px] sm:h-64 max-w-[900px] w-full'>
                 <h2 className='big-cursor stager-text1 text-[#564cf8] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
