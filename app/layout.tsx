@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Red_Hat_Display } from 'next/font/google'
 import './globals.css'
-import Header from './components/header'
 import HeaderNew from './components/new-header'
 import SmoothScroll from './components/SmoothScroll'
 

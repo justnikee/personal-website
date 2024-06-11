@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useLayoutEffect } from 'react'
-import img from '../../public/stack images/img.png'
 import Image from 'next/image'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import gsap from 'gsap'
@@ -9,7 +8,6 @@ import bgImage from '../../public/svg-image-19.svg'
 import rank from '../../public/svg-image-22.png'
 import circle from '../../public/svg-image-23.png'
 
-import { Roboto } from 'next/font/google'
 type Props = {}
 
 const About = (props: Props) => {
@@ -50,38 +48,40 @@ const About = (props: Props) => {
 
 
   return (
-        <div className='circle-rotation relative w-full overflow-hidden pt-[20vw] mt-24 '>
-        <div className='absolute z-0 top-0 left-0 w-[120%] h-full'>
-        <Image className='blob w-[100vw] ' src={bgImage} alt='shape' />
-        </div>
-        <div className='w-[900px] mb-[31rem] m-auto main-stager relative'>
-        <h2 className='stager-text1 text-[#f982fb] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
-        WE CREATE THE WEBSITE <br/>
-        THAT SUITS YOU
+        <div className='circle-rotation relative w-full overflow-hidden'>
+        <Image className='blob object-cover object-top sm:w-[100vw] absolute z-0 top-0 left-0 w-[120%] h-[1000px]' src={bgImage} alt='shape' />
+        <div className='h-[80vh] flex items-center justify-center'>
+        <div className=' w-full h-[400px] sm:h-[200px] sm:w-[900px] sm:mb-[10rem] m-auto main-stager relative'>
+        <h2 className='big-cursor stager-text1 text-[#f982fb] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        I CAN COOK THE DISHES <br/>
+        THAT YOU LOVE
         </h2>
-        <h2 className='stager-text2 text-[#f4f4f4] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
-        WE CREATE THE WEBSITE <br/>
-        THAT SUITS YOU
+        <h2 className='big-cursor stager-text2 text-[#f4f4f4] font-["damn"] text-[130px] leading-[117px] text-center absolute top-0 right-0 bottom-0 left-0'>
+        I CAN COOK THE DISHES <br/>
+        THAT YOU LOVE
         </h2>
         </div>
-        <div className='bg-black w-full'>
-        <div className='grid-section mx-10 px-7 py-10 bg-[#1C1C1C] grid grid-cols-2 gap-7 rounded-3xl'>
+        </div>
+
+
+        <div className='bg-black w-full '>
+        <div className='grid-section sm:mx-10 px-7 py-10 bg-[#1C1C1C] grid grid-cols-1 sm:grid-cols-2 gap-7 rounded-3xl z-50 relative'>
           <div className='grid1 grid grid-cols-2 gap-7'>
-            <div className='rounded-xl bg-[#A59FFF] flex flex-col justify-center items-center '>
-              <h3 className='font-["damn"] text-[96px] leading-[96px] text-black'>80+</h3>
+            <div className='rounded-xl bg-[#A59FFF] flex flex-col justify-center items-center  p-5'>
+              <h3 className='font-["damn"] text-[60px] leading-[60px] sm:text-[96px] sm:leading-[96px] text-black'>80+</h3>
               <p className='text-sm text-black font-["Roboto"]'>Customers</p>
             </div>
-            <div className='rounded-xl bg-[#F4F4F4] flex flex-col justify-center items-center'>
-            <h3 className='font-["damn"] text-[96px] leading-[96px] bg-[] text-black'>2 Years</h3>
+            <div className='rounded-xl bg-[#F4F4F4] flex flex-col justify-center items-center p-5'>
+            <h3 className='font-["damn"] text-[60px] leading-[60px] sm:text-[96px] sm:leading-[96px] bg-[] text-black'>2 Years</h3>
               <p className='text-sm text-black font-["Roboto"]'>of experience</p> 
               </div>
-            <div className='rounded-xl bg-[#F982FB] flex flex-col justify-center items-center'>
-            <h3 className='font-["damn"] text-[96px] leading-[96px] bg-[] text-black'>80+</h3>
+            <div className='rounded-xl bg-[#F982FB] flex flex-col justify-center items-center p-5'>
+            <h3 className='font-["damn"] text-[60px] leading-[60px] sm:text-[96px] sm:leading-[96px] bg-[] text-black'>80+</h3>
               <p className='text-sm text-black font-["Roboto"]'>projects completed</p> 
             </div>
-            <div className='rounded-xl bg-[#BEF941] flex flex-col justify-center items-center'>
-              <h3 className='font-["damn"] text-[96px] leading-[96px] bg-[] text-black'>100%</h3>
-              <p className='text-sm text-black font-["Roboto"]'>of satisfied customers!</p>
+            <div className='rounded-xl bg-[#BEF941] flex flex-col justify-center items-center p-5'>
+              <h3 className='font-["damn"] text-[60px] leading-[60px] sm:text-[96px] sm:leading-[96px] bg-[] text-black'>100%</h3>
+              <p className='text-sm text-black font-["Roboto"] text-center'>of satisfied customers!</p>
             </div>
           </div>
           <div className='grid2 rounded-xl bg-[#E0C0EA] gap-5 p-8 flex flex-col justify-center'>
@@ -106,15 +106,15 @@ const About = (props: Props) => {
 const Ranking = () => {
   return (
     <>
-    <div className='grid3 rounded-xl bg-[#f4f4f4] p-8 relative overflow-hidden'>
-      <div className='w-[42%] '>
+    <div className='grid3 rounded-xl bg-[#f4f4f4] p-8 relative md:overflow-hidden'>
+      <div className='md:w-[42%] '>
       <h3 className='text-black font-["damn"] text-[40px] leading-10 mb-4'>Raise your website to the top of the rankings</h3>
     <p className='text-black font-["Roboto"] text-lg leading-5'> Integrating SEO from the creation of your website is crucial to ensure its visibility and long-term success.<br/><br/>
         We adopt a proactive SEO strategy, tweaking every element to respond to search engines.<br/><br/>
         By doing so, we ensure that your site not only exists, but shines in search results, attracting quality and engaging traffic.
     </p>
       </div>
-      <Image className='absolute right-0 top-0' src={rank} alt='rank icon' />
+      <Image className='absolute h-32 w-32 right-0 top-[-90px] sm:top-2 sm:right-2' src={rank} alt='rank icon' />
     </div>
     </>
   )
@@ -122,6 +122,29 @@ const Ranking = () => {
 
 
 const Art = () => {
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  useLayoutEffect(() =>{
+    
+    gsap.fromTo('.rotate-icon' , {
+      rotation: 0,
+      transformOrigin: 'center'
+    },{
+      rotation: 360,
+      scrollTrigger: {
+         trigger: '.circle-rotation',
+         start: 'top 80%', 
+         end: 'bottom 20%',
+         scrub: true,
+        //  markers: true 
+      }
+    })
+
+
+  },[])
+
+
   return (
     <>
     <div className='p-8 flex flex-col bg-[#BEF941] rounded-xl relative'>
@@ -131,7 +154,7 @@ const Art = () => {
       By integrating fluid and captivating animations, we transform every interaction into a memorable visual experience for your visitors.<br/><br/>
       With our expertise, your site will not only be visited, it will be experienced!
     </p>
-    <Image className='rotate absolute top-[-100px] right-[-40px]' src={circle} alt='icon' />
+    <Image className='rotate absolute top-[-100px] right-[-40px] rotate-icon' src={circle} alt='icon' />
     </div>
     </>
   )

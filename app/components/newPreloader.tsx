@@ -68,14 +68,14 @@ const NewPreloader = (props: Props) => {
 
   return (
     <>
-       <div className="preloader-container h-full w-full absolute top-0 left-0 z-[100]">
-        <div ref={topBlock} className="h-[50vh] w-full bg-slate-200">
+       <div className="preloader-container h-full w-screen absolute right-0 top-0 left-0 z-[100]">
+        <div ref={topBlock} className="h-[50vh] w-full bg-[#EF4444]">
         </div>
-        <div className="loadertextWrapper flex flex-col w-full items-center overflow-hidden h-[100px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-black">
-        <span className="loadertext1 loadertext  text-8xl font-extrabold h-full w-fit text-center">Nikhil</span>
-        <span className="loadertext2  loadertext text-8xl font-extrabold h-full w-fit text-center">Nxkeeyyy</span>
+        <div className="loadertextWrapper flex flex-col w-full items-center overflow-hidden h-[100px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-[#BEF941]">
+        <span className='loadertext1 loadertext  text-9xl font-extrabold h-full w-fit text-center stager-text1  text-[#BEF941] uppercase font-["damn"]'>Nikhil</span>
+        <span className='loadertext2 font-["damn"] loadertext text-9xl font-extrabold text-[#000000] h-full w-fit text-center uppercase'>Nxkeeyyy</span>
         </div>
-        <div ref={bottomBlock} className="h-[50vh] w-full bg-slate-200">
+        <div ref={bottomBlock} className="h-[50vh] w-full bg-[#EF4444]">
         </div>
         </div>
     </>
