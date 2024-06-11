@@ -10,8 +10,8 @@ const HeaderNew = (props: Props) => {
 
     const [currentTime, setCurrentTime] = useState(new Date());
 
-    const topText = useRef();
-    const bottomText = useRef();
+    const topText = useRef(null);
+    const bottomText = useRef(null);
 
     function hanldeMouseEnter() {
       gsap.to([topText.current, bottomText.current],{
@@ -37,9 +37,9 @@ const HeaderNew = (props: Props) => {
         return () => clearInterval(intervalId);
       }, []);
       let hours = currentTime.getHours();
-      let ampm = hours >= '12' ? 'PM' : 'AM' 
+      let ampm = hours >= 12 ? 'PM' : 'AM' 
       let time = currentTime.getMinutes();
-      let currentMinute = time < '10' ? `0${time}` : time;
+      let currentMinute = time < 10 ? `0${time}` : time;
 
   return (
     <nav className='h-20 flex justify-center bg-transparent top-0 w-full'>

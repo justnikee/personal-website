@@ -7,8 +7,8 @@ type Props = {}
 
 const NewPreloader = (props: Props) => {
 
-    const bottomBlock = useRef();
-    const topBlock = useRef();
+  const bottomBlock = useRef<HTMLDivElement>(null);
+    const topBlock = useRef<HTMLDivElement>(null);
 
     const Animation = () => {
         gsap.to('.loadertext', {
