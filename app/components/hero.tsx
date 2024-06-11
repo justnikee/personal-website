@@ -169,7 +169,7 @@ const Hero = ({title1, title2, title3} :Props) => {
                     </h2>
               </div>
             </div>
-        <div className='fixed hidden left-10 bottom-20 text-slate-200 flex gap-2 rotate-[270deg]'>
+        <div className='fixed hidden left-10 bottom-20 text-slate-200  gap-2 rotate-[270deg]'>
           <span>SOUND</span>
           <span className='pointer'>OFF</span>
         </div>
