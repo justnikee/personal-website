@@ -31,7 +31,7 @@ const Projects = (props: Props) => {
           </div>
           <div className='flex justify-between items-center'>
           <h3 className='text-black font-["damn"] text-[40px] leading-10 pt-4'>Nike Clone</h3>
-          <Link href="https://github.com/justnikee/fuzzy-potato" target='_blank' className='bg-[#BEF941] text-sm px-6 py-3 rounded-3xl mt-5 block w-fit uppercase font-bold'>View Code</Link>
+          <Link href="https://github.com/justnikee/fuzzy-potato" target='_blank' className='bg-[#BEF941] big-cursor text-sm px-6 py-3 rounded-3xl mt-5 block w-fit uppercase font-bold'>View Code</Link>
           </div>
         </div>
         <div>
@@ -46,7 +46,7 @@ const Projects = (props: Props) => {
           </div>
           <div className='flex justify-between items-center'>
           <h3 className='text-black font-["damn"] text-[40px] leading-10 pt-4'>Backend Store API</h3>
-          <Link href="https://github.com/justnikee/Backend" target='_blank' className='bg-[#BEF941] text-sm px-6 py-3 rounded-3xl mt-5 block w-fit uppercase font-bold'>View Code</Link>
+          <Link href="https://github.com/justnikee/Backend" target='_blank' className='bg-[#BEF941] big-cursor text-sm px-6 py-3 rounded-3xl mt-5 block w-fit uppercase font-bold'>View Code</Link>
           </div>
         </div>
       </div>
