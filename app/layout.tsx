@@ -1,9 +1,13 @@
+
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+import HeaderNew from './components/new-header'
+import SmoothScroll from './components/SmoothScroll'
 import type { Metadata } from 'next'
 import { Red_Hat_Display } from 'next/font/google'
 import './globals.css'
-import HeaderNew from './components/new-header'
-import SmoothScroll from './components/SmoothScroll'
-import { Analytics } from '@vercel/analytics/next'
+
 
 const inter = Red_Hat_Display({ subsets: ['latin'] })
 
@@ -26,6 +30,7 @@ export default function RootLayout({
         {children}
         </SmoothScroll>
         <Analytics/>
+        <SpeedInsights/>
         </body>
     </html>
   )
