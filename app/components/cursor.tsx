@@ -44,7 +44,7 @@ const Cursor = (props: Props) => {
 
   return (
     <div
-      className='custom-cursor fixed top-[10px] left-0 w-8 h-8 bg-white border-2 border-black rounded-full mix-blend-difference p-3 flex justify-center items-center'
+      className='custom-cursor hidden fixed top-[10px] left-0 w-8 h-8 bg-white border-2 border-black rounded-full mix-blend-difference p-3 sm:flex justify-center items-center'
       style={{ transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`, pointerEvents: 'none' }}
     >
     </div>
